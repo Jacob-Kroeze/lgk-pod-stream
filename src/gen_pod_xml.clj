@@ -14,9 +14,11 @@
       ;md5 (hash/md5 (io/input-stream url))
       ;size (io/buffer-size (io/input-stream url))
       ]
-  (->> (rss/channel-xml {:title       "For Inky"
+  (->> (rss/channel-xml false {:title       "For Inky"
                          :link        ch-url
                          :description "Media for one"
+                         ;<itunes:block>Yes<itunes:block>
+                         :itunes [{:block "Yes"}]
                          ;:itunes:duration    (+ (* 5 60) 51)
                          ;:pubDate     "Sun, 25 Jan 2026 18:00:00 -0500"               ; todo formatting
                          ;:size        size
