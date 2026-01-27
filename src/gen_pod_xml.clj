@@ -18,8 +18,9 @@
   (->> (rss/channel-xml false {:title       "For Inky"
                                :link        ch-url
                                :description "Media for one"
-                               :itunes [{:image "https://media-public-pod.s3.us-west-2.amazonaws.com/art/Cover_Art.png"
-                                         :block "Yes"}]}
+                               :image       [{:url "https://media-public-pod.s3.us-west-2.amazonaws.com/art/Cover_Art.png"}]
+                               :itunes [{:block "Yes"}]
+                               }
                         [ {:title     "Consider Yourself"
                            :pubDate   (java.time.Instant/parse "2026-01-26T22:10:16.971601500Z")
                            :image     [{:url ""}]
