@@ -7,34 +7,36 @@
 ;DatatypeConverter
 
 
+(defn md5-fn [url]
+  (codecs/bytes->hex (hash/md5 (io/input-stream url))))
 
-(let [ch-url "https://raw.githubusercontent.com/Jacob-Kroeze/lgk-pod-stream/refs/heads/main/pod.xml"
-      url "https://media-public-pod.s3.us-west-2.amazonaws.com/04-consider-yourself.mp3"
-      _ (defonce md5 (hash/md5 (io/input-stream url)))
-      ;md5 (hash/md5 (io/input-stream url))
-      ;size (io/buffer-size (io/input-stream url))
-      ]
+
+
+(defonce md5 (memoize md5-fn))
+
+(let [ch-url "https://raw.githubusercontent.com/Jacob-Kroeze/lgk-pod-stream/refs/heads/main/pod.xml"]
   (->> (rss/channel-xml false {:title       "For Inky"
-                         :link        ch-url
-                         :description "Media for one"
-                         ;<itunes:block>Yes<itunes:block>
-                         :itunes [{:block "Yes"}]
-                         ;:itunes:duration    (+ (* 5 60) 51)
-                         ;:pubDate     "Sun, 25 Jan 2026 18:00:00 -0500"               ; todo formatting
-                         ;:size        size
-                         ;:type-tag "audio/mpeg"
-                         ;:enclosure {:url url :type "audio/mpeg"}
-                         ;:guid md5
-                         }
-                        [{:title     "Consider Yourself"
-
-                          :pubDate   (java.time.Instant/now)
-                          :image     [{:url "https://commons.wikimedia.org/wiki/File:Moscow_et_Owana_de_l%E2%80%99%C3%A9levage_Of_Kolyma_Wolves.jpg?uselang=fr"}]
-                          :author    "JLK"
-                          :guid      (codecs/bytes->hex md5)
-                          :enclosure [{:url url :type "audio/mp3" :lenght (+ (* 5 60) 51)}]}])
-       (spit "pod.xml")
-       ))
+                               :link        ch-url
+                               :description "Media for one"
+                               :itunes [{:image "https://media-public-pod.s3.us-west-2.amazonaws.com/art/Cover_Art.png"
+                                         :block "Yes"}]}
+                        [ {:title     "Consider Yourself"
+                           :pubDate   (java.time.Instant/parse "2026-01-26T22:10:16.971601500Z")
+                           :image     [{:url ""}]
+                           :author    "JLK"
+                           :guid      (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/04-consider-yourself.mp3")
+                           :enclosure [{:url    "https://media-public-pod.s3.us-west-2.amazonaws.com/04-consider-yourself.mp3"
+                                        :type   "audio/mp3"
+                                        :length (+ (* 5 60) 51)}]}
+                         {:title     "Animals Crossing at 3am"
+                          :pubDate  (java.time.Instant/parse  "2026-01-27T22:10:16.971601500Z")
+                          :image [{:url ""}]
+                          :author "JLK"
+                          :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/animal-crossing-at-3am.aac")
+                          :enclosure [{:url  "https://media-public-pod.s3.us-west-2.amazonaws.com/animal-crossing-at-3am.aac"
+                                       :type "audio/aac"}]}])
+    (spit "pod.xml")
+    ))
 
 (comment
   (slurp "pod.xml"))
