@@ -33,9 +33,16 @@
                           :pubDate  (java.time.Instant/parse  "2026-01-27T22:10:16.971601500Z")
                           :image [{:url ""}]
                           :author "JLK"
-                          :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/animal-crossing-at-3am.aac")
-                          :enclosure [{:url  "https://media-public-pod.s3.us-west-2.amazonaws.com/animal-crossing-at-3am.aac"
-                                       :type "audio/aac"}]}])
+                          :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/animal-crossing-at-3am.mp3")
+                          :enclosure [{:url  "https://media-public-pod.s3.us-west-2.amazonaws.com/animal-crossing-at-3am.mp3"
+                                       :type "audio/mp3"}]}
+                         {:title     "HW 2026-01-29"
+                          :pubDate  (java.time.Instant/parse  "2026-01-29T22:10:16.971601500Z")
+                          :image [{:url ""}]
+                          :author "JLK"
+                          :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/hw-2026-01-29.mp3")
+                          :enclosure [{:url   "https://media-public-pod.s3.us-west-2.amazonaws.com/hw-2026-01-29.mp3"
+                                       :type "audio/mp3"}]}])
     (spit "pod.xml")
     ))
 
