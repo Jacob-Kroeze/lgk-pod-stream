@@ -18,7 +18,9 @@
   (->> (rss/channel-xml false {:title       "For Inky"
                                :link        ch-url
                                :description "Media for one"
-                               :image       [{:url "https://media-public-pod.s3.us-west-2.amazonaws.com/art/Cover_Art.png"}]
+                               :image       [{:url "https://media-public-pod.s3.us-west-2.amazonaws.com/art/Cover_Art.png"
+                                              :title "Raised by Wolves"
+                                              :link "https://media-public-pod.s3.us-west-2.amazonaws.com/art/Cover_Art.png" }]
                                :itunes [{:block "Yes"}]
                                }
                         [ {:title     "Consider Yourself"
