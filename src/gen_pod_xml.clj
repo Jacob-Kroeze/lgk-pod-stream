@@ -42,7 +42,16 @@
                           :author "JLK"
                           :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/hw-2026-01-29.mp3")
                           :enclosure [{:url   "https://media-public-pod.s3.us-west-2.amazonaws.com/hw-2026-01-29.mp3"
-                                       :type "audio/mp3"}]}])
+                                       :type "audio/mp3"}]}
+                         {:title     "Battles - Atlas"
+                          :pubDate  (java.time.Instant/parse  "2026-04-02T22:10:16.971601500Z")
+                          :image [{:url ""}]
+                          :author "JLK"
+                          :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/battles-atlas.mp3")
+                          :enclosure [{:url   "https://media-public-pod.s3.us-west-2.amazonaws.com/battles-atlas.mp3"
+                                       :type "audio/mp3"}]}
+
+                         ])
     (spit "pod.xml")
     ))
 
