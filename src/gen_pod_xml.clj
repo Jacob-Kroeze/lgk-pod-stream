@@ -52,7 +52,13 @@
                           :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/battles-atlas.mp3")
                           :enclosure [{:url   "https://media-public-pod.s3.us-west-2.amazonaws.com/battles-atlas.mp3"
                                        :type "audio/mp3"}]}
-
+                         {:title     "Toy - Da Drum"
+                          :pubDate (java.time.Instant/parse "2026-03-12T22:10:16.971601500Z")
+                          :image [{:url ""}]
+                          :author "JLK"
+                          :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/drum-toy-eg.mp3")
+                          :enclosure [{:url  "https://us-west-2.console.aws.amazon.com/s3/object/media-public-pod?region=us-west-2&prefix=drum-toy-eg.mp3"
+                                       :type "audio/mp3"}]}
                          ])
     (spit "pod.xml")
     ))
