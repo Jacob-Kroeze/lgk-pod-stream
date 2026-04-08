@@ -54,11 +54,30 @@
                                        :type "audio/mp3"}]}
                          {:title     "Toy - Da Drum"
                           :pubDate (java.time.Instant/parse "2026-03-12T22:10:16.971601500Z")
-                          :image [{:url ""}]
                           :author "JLK"
                           :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/drum-toy-eg.mp3")
                           :enclosure [{:url   "https://media-public-pod.s3.us-west-2.amazonaws.com/drum-toy-eg.mp3"
                                        :type "audio/mp3"}]}
+                         {:title "Meanie master bullet"
+                          :pubDate  (java.time.Instant/parse "2026-04-07T00:10:16.971601500Z")
+                          :author "JLK"
+                          :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/Meanie__Master_Bullet_OST.mp3")
+                          :enclosure [{:url "https://media-public-pod.s3.us-west-2.amazonaws.com/Meanie__Master_Bullet_OST.mp3"
+                                       :type "audio/mp3"}]}
+                         {:title "Overtime minigame mayhem ost"
+                          :pubDate  (java.time.Instant/parse "2026-04-07T00:10:16.971601500Z")
+                          :author "JLK"
+                          :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/Overtime__Minigame_Mayhem_OST.mp3")
+                          :enclosure [{:url "https://media-public-pod.s3.us-west-2.amazonaws.com/Overtime__Minigame_Mayhem_OST.mp3"
+                                       :type "audio/mp3"}]}
+                         {:title "Minigame mayhem ost"
+                          :pubDate  (java.time.Instant/parse "2026-04-07T00:10:16.971601500Z")
+                          :author "JLK"
+                          :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/Minigame_Mayhem__Minigame_Mayhem_OST+(1).mp3")
+                          :enclosure [{:url "https://media-public-pod.s3.us-west-2.amazonaws.com/Minigame_Mayhem__Minigame_Mayhem_OST+(1).mp3"
+                                       :type "audio/mp3"}]}
+
+
                          ])
     (spit "pod.xml")
     ))
