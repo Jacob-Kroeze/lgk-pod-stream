@@ -76,7 +76,20 @@
                           :guid (md5 "https://media-public-pod.s3.us-west-2.amazonaws.com/Minigame_Mayhem__Minigame_Mayhem_OST+(1).mp3")
                           :enclosure [{:url "https://media-public-pod.s3.us-west-2.amazonaws.com/Minigame_Mayhem__Minigame_Mayhem_OST+(1).mp3"
                                        :type "audio/mp3"}]}
-
+                         (let [url "https://media-public-pod.s3.us-west-2.amazonaws.com/Omnipresent.mp3"]
+                           {:title     "Omnipresent"
+                                     :pubDate   (java.time.Instant/parse "2026-04-12T00:10:16.971601500Z")
+                                     :author    "JLK"
+                                     :guid      (md5 url)
+                                     :enclosure [{:url  url
+                                                  :type "audio/mp3"}]})
+                         (let [url "https://media-public-pod.s3.us-west-2.amazonaws.com/Darkness.mp3"]
+                           {:title     "Darkness"
+                            :pubDate   (java.time.Instant/parse "2026-04-12T00:10:16.971601500Z")
+                            :author    "JLK"
+                            :guid      (md5 url)
+                            :enclosure [{:url  url
+                                         :type "audio/mp3"}]})
 
                          ])
     (spit "pod.xml")
